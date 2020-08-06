@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="shortcut icon" href="login/ico80.png" />
+  <title>PLACON</title>
+
+    <!-- META TAGS -->
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400,700,800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+<!-- BEGIN header -->
+<%= render "layouts/partes/header" %>
+ <!-- END NAV -->
+
+    <%= yield %>
+
+<!-- BEGIN FOOTER -->
+<%= render "layouts/partes/footer" %>
+<!--END FOOTER -->
+</body>
+</html>
