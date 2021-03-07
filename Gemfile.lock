@@ -141,7 +141,6 @@ GEM
       omniauth-oauth (~> 1.1)
       rack
     orm_adapter (0.5.0)
-    pg (1.0.0)
     popper_js (1.12.9)
     pry (0.11.3)
       coderay (~> 1.1.0)
@@ -266,7 +265,6 @@ DEPENDENCIES
   meta-tags
   omniauth (~> 1.6)
   omniauth-twitter
-  pg
   pry-rails
   puma (~> 3.7)
   rails (~> 5.1.4)
