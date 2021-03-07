@@ -38,7 +38,7 @@
       <div id="comment-post-<%= post.id.to_s %>">
         <%= render 'comment_list', {post: post} %>
       </div>
-      <%= link_to time_ago_in_words(post.created_at).upcase + " AGO", post_path(post),
+      <%= link_to time_ago_in_words(post.created_at).upcase + " atrás", post_path(post),
         class: "light-color post-time no-text-decoration" %>
       <hr>
       <div class="row actions" id="comment-form-post-<%= post.id.to_s %>">

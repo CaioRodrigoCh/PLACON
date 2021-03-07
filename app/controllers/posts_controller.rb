@@ -18,9 +18,9 @@ class PostsController < ApplicationController
       end
 
       redirect_to posts_path
-      flash[:notice] = "Saved ..."
+      flash[:notice] = "Comunicado publicado!"
     else
-      flash[:alert] = "Something went wrong ..."
+      flash[:alert] = "Algo deu errado!"
       redirect_to posts_path
     end
   end
@@ -31,18 +31,18 @@ class PostsController < ApplicationController
     @comment = Comment.new
     @is_liked = @post.is_liked(current_user)
     @is_bookmarked = @post.is_bookmarked(current_user)
-    set_meta_tags title: "Photo by "+@post.user.name
+    set_meta_tags title: "Comunicado por "+@post.user.name
   end
 
   def destroy
     if @post.user == current_user
       if @post.destroy
-        flash[:notice] = "Post deleted!"
+        flash[:notice] = "Comunicado deletado!"
       else
-        flash[:alert] = "Something went wrong ..."
+        flash[:alert] = "Algo deu errado!"
       end
     else
-      flash[:notice] = "You don't have permission to do that!"
+      flash[:notice] = "Você não tem permissão para fazer isso!"
     end
     redirect_to root_path
   end
@@ -53,7 +53,7 @@ class PostsController < ApplicationController
     @post = Post.find_by id: params[:id]
 
     return if @post
-    flash[:danger] = "Post not exist!"
+    flash[:danger] = "Comunicado não existe!"
     redirect_to root_path
   end
 

@@ -47,7 +47,7 @@
       <div id="like-text-post-<%= @post.id.to_s %>">
         <%= render "like_text", {likes: @likes} %>
       </div>
-      <div class="light-color post-time"><%= time_ago_in_words(@post.created_at).upcase %> AGO</div>
+      <div class="light-color post-time">há <%= time_ago_in_words(@post.created_at).upcase %></div>
       <hr>
       <div class="row actions" id="comment-form-post-<%= @post.id.to_s %>">
         <%= render 'comment_form', post: @post %>

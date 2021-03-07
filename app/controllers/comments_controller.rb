@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
       @post = @comment.post
       respond_to :js
     else
-      flash[:alert] = "Something went wrong ..."
+      flash[:alert] = "Algo deu errado!"
     end
   end
 
@@ -21,7 +21,7 @@ class CommentsController < ApplicationController
     if @comment.destroy
       respond_to :js
     else
-      flash[:alert] = "Something went wrong ..."
+      flash[:alert] = "Algo deu errado!"
     end
   end
 

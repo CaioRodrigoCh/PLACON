@@ -1,7 +1,11 @@
 <% if is_liked.present? %>
-  <%= link_to "Love", like_path(is_liked), method: :delete, remote: true,
-    class: "core-sprite loved hide-text" %>
+  <%= link_to like_path(is_liked), method: :delete, remote: true,
+    class: "" do %>
+    <i class="fa fa-check-square fa-2x"></i>
+    <%end%>
 <% else %>
-  <%= link_to "Loved", post_likes_path(post), method: :post, remote: true,
-    class: "core-sprite love hide-text" %>
+  <%= link_to post_likes_path(post), method: :post, remote: true,
+    class: "" do %>
+    <i class="far fa-check-square fa-2x"></i>
+    <% end %>
 <% end %>

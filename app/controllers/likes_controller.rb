@@ -7,7 +7,7 @@ class LikesController < ApplicationController
     if @like.save
       respond_to :js
     else
-      flash[:alert] = "Something went wrong ..."
+      flash[:alert] = "Algo deu errado!"
     end
   end
 
@@ -17,7 +17,7 @@ class LikesController < ApplicationController
     if @like.destroy
       respond_to :js
     else
-      flash[:alert] = "Something went wrong ..."
+      flash[:alert] = "Algo deu errado!"
     end
   end
 

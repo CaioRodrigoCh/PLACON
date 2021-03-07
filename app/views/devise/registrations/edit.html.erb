@@ -14,6 +14,12 @@
         <div class="col-sm-3 text-right">
           <%= image_tag avatar_url(@user), width: '38', height: '38', class: "round-img" %>
         </div>
+        
+        <div >
+        <%# arrumar aqui %>
+         <%= f.file_field :files, multiple: true %>
+        </div>
+        
         <div class="col-sm-9">
           <p><%= @user.name %></p>
         </div>
