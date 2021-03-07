@@ -1,0 +1,25 @@
+<div class="interna">
+  <h2>Esqueceu sua senha?</h2>
+</div>
+
+<div class="interna">
+  <div class="alert">
+    <hr>  
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }, class: 'form-signin form') do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div>
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-signin form' %>
+      </div>
+      <br>
+      <div class="actions">
+        <%= f.submit "Recuperar minha senha", class:'btn btn-primary' %>
+      </div>
+    <% end %>
+
+    <br>
+    <br>
+    <%= render "devise/shared/links" %>
+  </div>
+</div>
