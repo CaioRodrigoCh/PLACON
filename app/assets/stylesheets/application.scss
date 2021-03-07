@@ -72,7 +72,6 @@ body {
 // Landing
 .landing-left {
   .dummy-phone {
-    background-image: image-url("dummy-phone-2x.png");
     background-repeat: no-repeat;
     background-position: right 0;
     background-size: 454px 618px;
@@ -461,3 +460,16 @@ footer .nav-item {
   background: #fff;
   padding: 0;
 }
+
+.interna {
+  text-align: center;
+  vertical-align:middle;
+  }
+
+  .form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 5px;
+    margin: 0 auto;
+    border-radius: 10px;
+  }

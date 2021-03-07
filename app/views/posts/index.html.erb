@@ -2,7 +2,7 @@
   <div class="col-xl-7 col-lg-8 col-md-10 col-sm-11 post-card">
     <div class="card">
       <div class="card-header">
-        Create Post
+        Criar comunicado
       </div>
       <div class="card-body">
         <%= form_for @post, :html => {:multipart => true, :class => "dropzone upload-images p-0 border-0"} do |f| %>
@@ -12,7 +12,7 @@
             </div>
             <div class="col pl-0">
               <%= f.text_field :content, class: "form-control border-0",
-                placeholder: "Say something about this ..." %>
+                placeholder: "Comunique algo!" %>
             </div>
           </div>
           <div class="fallback">
@@ -24,7 +24,7 @@
               <i class="fa fa-plus fa-2x" aria-hidden="true" style="color:#dddfe2"></i>
             </div>
           </div>
-          <%= f.submit "Post", class: "btn btn-primary" %>
+          <%= f.submit "Publicar", class: "btn btn-primary" %>
         <% end %>
       </div>
     </div>
