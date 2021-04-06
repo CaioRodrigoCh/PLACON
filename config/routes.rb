@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'rules/new'
+  get 'rules/create'
   root 'posts#index'
 
   devise_for :users,
@@ -15,5 +17,7 @@ Rails.application.routes.draw do
     resources :likes, only: [:create, :destroy], shallow: true
     resources :comments, only: [:index, :create, :destroy], shallow: true
     resources :bookmarks, only: [:create, :destroy], shallow: true
+    resources :rules, only: [:create, :destroy], shallow: true
   end
+  get '/rules', to: 'rules#index'
 end

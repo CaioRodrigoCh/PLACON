@@ -1,0 +1,47 @@
+<div class="container form-group">
+    <div class="row">
+        <div class="col">
+        <h4 class="font_agencia mt-4">
+            Olá! Confira as regras do seu condomínio!
+        </h4>
+        </div>
+    </div>
+
+    <div class="accordion mt-0 card_topicos" id="accordionExample">
+        <% @topicos.each do |topico| %>
+
+        <div class="card titu" style="background-color: #F7F7F7;">
+            <div class="card-header" id="heading<%= topico.id %>" data-toggle="collapse"
+                data-target="#collapse<%= topico.id %>" aria-expanded="false" aria-controls="collapse<%= topico.id %>">
+                <h5 class="m-2 text-primary"><strong><%= topico.titulo %></strong></h5>
+            </div>
+
+            <div id="collapse<%= topico.id %>" class="collapse" aria-labelledby="heading<%= topico.id %>"
+                data-parent="#accordionExample">
+                <div class="card-body">
+                    <% topico.subtopico.each do |subtopico| %>
+                        <h5><strong><%= subtopico.titulo %></strong></h5>
+                            <ul class="item">
+                                <% subtopico.id do |page| %>
+                                <li>
+                                    <%= link_to conteudo_site_path(page.id, page.titulo.parameterize) do %>
+                                        – <%= page.titulo %>
+                                <% end %>
+                                </li>
+                                <% end %>
+                                <% end %>
+                                </ul>   
+
+                                </div>
+                                </div>
+                                </div>
+
+                                <% end %>
+                        </div>
+                </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

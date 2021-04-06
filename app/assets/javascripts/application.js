@@ -17,3 +17,33 @@
 //= require dropzone
 //= require_tree .
 //= require toastr
+//= require activestorage
+//= require turbolinks
+
+
+document.addEventListener("turbolinks:load", function () {
+    $("#q_subtopico_page_conteudo_i_cont").focus();
+
+    $('#selecao').change(function () {
+        window.location = $(this).val();
+    });
+
+
+    $("#pesquisa").on("keyup", function () {
+        var value = $(this).val().toLowerCase();
+        $(".titu").filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+        $(".item").filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
+
+    $("#search").on("keyup", function () {
+        var value = $(this).val().toLowerCase();
+        $(".tex").filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
+
+});
