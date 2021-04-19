@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :usuarios
   get 'rules/new'
   get 'rules/create'
   root 'posts#index'
