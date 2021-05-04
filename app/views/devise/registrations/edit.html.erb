@@ -15,10 +15,18 @@
           <%= image_tag avatar_url(@user), width: '38', height: '38', class: "round-img" %>
         </div>
         
+        <%# <div > %>
+         <%# <%= f.file_field :files, :class => "btn btn-primary", multiple: true %>
+        <%# </div> %>
         <div >
-        <%# arrumar aqui %>
-         <%= f.file_field :files, multiple: true %>
+          <label class="btn btn-primary">
+            Alterar foto
+            <span style="display:none;">
+              <%= f.file_field :file %>
+            </span>
+          </label>
         </div>
+        
         
         <div class="col-sm-9">
           <p><%= @user.name %></p>

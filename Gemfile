@@ -25,6 +25,8 @@ gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 gem 'will_paginate','3.1.7'
 gem 'mini_racer', platforms: :ruby
+gem 'sqlite3'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -33,7 +35,6 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   # gem 'sqlite3'
-  gem 'mysql2'
   gem 'pry-rails'
 end
 

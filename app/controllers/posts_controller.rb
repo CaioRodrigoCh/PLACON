@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :find_post, only: [:show, :destroy]
 
   def index
-    @posts = Post.paginate(:page => params[:page], :per_page => 10).includes(:photos, :user, :likes).
+    @posts = Post.paginate(:page => params[:page], :per_page => 5).includes(:photos, :user, :likes).
       order("created_at desc")
     @post = Post.new
   end
@@ -13,14 +13,14 @@ class PostsController < ApplicationController
     if @post.save
       if params[:images]
         params[:images].each do |img|
-          @post.photos.create(image: params[:images][img])
+          @post.photos.create(image: img[1])
         end
       end
 
       redirect_to posts_path
-      flash[:notice] = "Comunicado publicado!"
+      flash[:notice] = "Comunicado enviado!"
     else
-      flash[:alert] = "Algo deu errado!"
+      flash[:alert] = "Algo deu errado"
       redirect_to posts_path
     end
   end
@@ -31,7 +31,6 @@ class PostsController < ApplicationController
     @comment = Comment.new
     @is_liked = @post.is_liked(current_user)
     @is_bookmarked = @post.is_bookmarked(current_user)
-    set_meta_tags title: "Comunicado por "+@post.user.name
   end
 
   def destroy
@@ -39,10 +38,10 @@ class PostsController < ApplicationController
       if @post.destroy
         flash[:notice] = "Comunicado deletado!"
       else
-        flash[:alert] = "Algo deu errado!"
+        flash[:alert] = "Algo deu errado"
       end
     else
-      flash[:notice] = "Você não tem permissão para fazer isso!"
+      flash[:notice] = "Você nao tem permissão para fazer isso!"
     end
     redirect_to root_path
   end
