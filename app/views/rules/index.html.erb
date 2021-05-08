@@ -8,40 +8,32 @@
     </div>
 
     <div class="accordion mt-0 card_topicos" id="accordionExample">
-        <% @topicos.each do |topico| %>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                <th scope="col">Regra 1</th>
+                </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                    <th scope="row">Descrição da Regra 1</th>
+                    </tr>
+                    <tr>
+            </tbody>
+        </table>
 
-        <div class="card titu" style="background-color: #F7F7F7;">
-            <div class="card-header" id="heading<%= topico.id %>" data-toggle="collapse"
-                data-target="#collapse<%= topico.id %>" aria-expanded="false" aria-controls="collapse<%= topico.id %>">
-                <h5 class="m-2 text-primary"><strong><%= topico.titulo %></strong></h5>
-            </div>
-
-            <div id="collapse<%= topico.id %>" class="collapse" aria-labelledby="heading<%= topico.id %>"
-                data-parent="#accordionExample">
-                <div class="card-body">
-                    <% topico.subtopico.each do |subtopico| %>
-                        <h5><strong><%= subtopico.titulo %></strong></h5>
-                            <ul class="item">
-                                <% subtopico.id do |page| %>
-                                <li>
-                                    <%= link_to conteudo_site_path(page.id, page.titulo.parameterize) do %>
-                                        – <%= page.titulo %>
-                                <% end %>
-                                </li>
-                                <% end %>
-                                <% end %>
-                                </ul>   
-
-                                </div>
-                                </div>
-                                </div>
-
-                                <% end %>
-                        </div>
-                </div>
-                </div>
-                </div>
-            </div>
-        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                <th scope="col">Regra 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                    <th scope="row">Descrição da Regra 2</th>
+                    </tr>
+                    <tr>
+            </tbody>
+        </table>
     </div>
 </div>
