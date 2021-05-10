@@ -6,11 +6,19 @@
     <%= csrf_meta_tags %>
     <%= display_meta_tags site: 'PLACON - Plataforma de Comunicação Para Condomínio.',
                           keywords: 'PLACON',
-                          description: "Uma plataforma para a comunicação das pessoas q vivem no mesmo condomínio."%>
+                          description: "Uma plataforma para a comunicação das pessoas que vivem no mesmo condomínio."%>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <%= favicon_link_tag 'ico40.png' %>
+
+    <%# Whathapp %>
+    <meta property="og:site_name" content="PLACON - Plataforma de Comunicação Para Condomínio.">
+    <meta property="og:title" content="PLACON: Uma solução pro seu condomínio" />
+    <meta property="og:description" content="Uma plataforma para a comunicação das pessoas que vivem no mesmo condomínio." />
+    <meta property="og:image" itemprop="image" content="<%= image_tag "convenção-de-condomínio-formatada.jpg" %>"/>
+    <meta property="og:type" content="website" />
+    <meta property="og:updated_time" content="1440432930" />
   </head>
 
   <body>
