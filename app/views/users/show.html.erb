@@ -21,7 +21,7 @@
               </button>
             </div>
             <div class="list-group text-center">
-              <a href="#" class="list-group-item list-group-item-action">Mudar Senha</a>
+              <%= link_to "Mudar Senha", edit_user_registration_path, class: "list-group-item list-group-item-action" %>
               <%= link_to "Sair", destroy_user_session_path, method: :delete,
                 class: "list-group-item list-group-item-action" %>
               <a href="#" class="list-group-item list-group-item-action" data-dismiss="modal">Cancelar</a>
