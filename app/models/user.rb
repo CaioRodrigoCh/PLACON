@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  enum status: %i[em_analise aguardando inativo ativo]
   has_many :posts, dependent: :destroy
   has_many :likes
   has_many :comments
