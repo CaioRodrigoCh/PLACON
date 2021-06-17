@@ -25,7 +25,7 @@ gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 gem 'will_paginate','3.1.7'
 gem 'mini_racer', platforms: :ruby
-gem 'sqlite3'
+gem 'sqlite3', '~> 1.3.6'
 
 
 group :development, :test do
