@@ -5,7 +5,7 @@
       <%= image_tag("ico40.png") %>
     </strong></h3>
 
-
+    <%if current_user.ativo? %>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <%= form_tag users_path, method: :get, class: "form-inline my-2 my-lg-0 ml-md-auto", id: "users-search",
         remote: true do %>
@@ -20,11 +20,17 @@
         <li class="nav-item" >
           <a class="fas fa-clipboard-list fa-2x" href="<%= rules_path()%>" style="color: black;"></a>
         </li>
+        <% if current_user.admin == true %>
+        <li class="nav-item" >
+          <a class="fas fa-address-card fa-2x" href="admin/users_index" style="color: black;"></a>
+        </li>
+        <% end %>
         <li class="nav-item">
           <a class="fas fa-user fa-2x" href="<%= user_path(current_user)%>" style="color: black;"></a>
           <%# <%= link_to "Profile", user_path(current_user), class: "nav-link profile-icon color-icons-nav" %>
         </li>
       </ul>
     </div>
+    <% end%>
   </div>
 </nav>

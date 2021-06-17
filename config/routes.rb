@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'admin/users_index'
   resources :usuarios
   get 'rules/new'
   get 'rules/create'
@@ -7,7 +8,7 @@ Rails.application.routes.draw do
   devise_for :users,
     path: '',
     path_names: {sign_in: 'login', sign_out: 'logout', edit: 'profile', sign_up: 'registration'},
-    controllers: {omniauth_callbacks: 'omniauth_callbacks', registrations: 'registrations'}
+    controllers: {registrations: 'registrations'}
 
   # get '/users/:id', to: 'users#show'
   # /users/3 -> Users controller, show action, params {id: '3'}
@@ -20,5 +21,10 @@ Rails.application.routes.draw do
     resources :bookmarks, only: [:create, :destroy], shallow: true
     resources :rules, only: [:create, :destroy], shallow: true
   end
+
+  get '/admin/make_admin/:id', to: 'admin#make_admin'
+  get '/admin/deny_access/:id', to: 'admin#deny_access'
+  get '/admin/allow_access/:id', to: 'admin#allow_access'
+
   get '/rules', to: 'rules#index'
 end

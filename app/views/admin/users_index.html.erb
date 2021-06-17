@@ -1,0 +1,71 @@
+<div class="container form-group">
+        <div class="row">
+            <div class="col">
+            <h4 class="font_agencia mt-4">
+                Olá! Aqui você consegue gerenciar os usuários do sistema!
+            </h4>
+            </div>
+        </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Nome</th>
+                <th>Status</th>
+                <th>perfil</th>
+                <th>email</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @user.each do |u| %>
+                <tr>
+                    <td>
+                        <%= u.id %>
+                    </td>
+                    <td>
+                        <%= u.name %>
+                    </td>
+
+                    <td>
+                        <%= u.status.split('_').map(&:capitalize).join(' ') %>
+                    </td>
+
+                    <td>
+                        <% if u.admin == true %>
+                        Administrador
+                        <%else%>
+                        Morador
+                        <%end%>
+
+                    </td>
+
+                    <td>
+                        <%= u.email %>
+                    </td>
+
+                    <td>
+                        <%if u.admin ==  true || u.em_analise? %>
+                        <a class="btn btn-primary disabled" >Tornar Administrador</a>
+                        <% else %>
+                        <a class="btn btn-primary" href="/admin/make_admin/<%= u.id %>" >Tornar Administrador</a>
+                        <%end%>
+
+                        <% if u.ativo?%>
+                        <a class="btn btn-danger" href="/admin/deny_access/<%= u.id %>" > Bloquear acesso </a> 
+                        <% else %> 
+                        <a class="btn btn-success" href="/admin/deny_access/<%= u.id %>" >Desbloquear acesso<a> 
+                        <% end %>    
+                            
+                        <% if u.em_analise? %>
+                        <a class="btn btn-success" href="/admin/allow_access/<%= u.id %>" >  
+                        Autorizar acesso
+                        </a> 
+                        <% end %>
+                                    
+                    </td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>

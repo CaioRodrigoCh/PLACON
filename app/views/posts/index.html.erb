@@ -1,3 +1,19 @@
+<% if current_user.em_analise? || current_user.inativo? %>
+  <div class="d-flex flex-column align-items-center mt-3">
+  <div class="col-xl-7 col-lg-8 col-md-10 col-sm-11 post-card" style="width: 990px;">
+    <div class="card">
+      <div class="card-header" style="position: relative;padding-left: 240px;color: red;">
+        <h4>ATENÇÃO!</h4>
+      </div>
+      <div class="card-body">
+        <h3> O seu usuário está em processo de análise!</h3>
+        <p><h3>Espere até o síndico ou administrador do sistema liberar seu acesso!</h3><p>
+        <div  style="position: relative;padding-left: 253px">
+          <a class="btn btn-primary" href="/logout">Sair</a>
+        </div>
+      </div>
+    </div>
+<% else %>
 <div class="d-flex flex-column align-items-center mt-3">
   <div class="col-xl-7 col-lg-8 col-md-10 col-sm-11 post-card">
     <div class="card">
@@ -36,3 +52,5 @@
   <br>
   <%= will_paginate @posts%>
 </div>
+
+<% end %>
