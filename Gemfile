@@ -23,8 +23,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'toastr-rails'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
-gem 'will_paginate','3.1.7'
-gem 'mini_racer', platforms: :ruby
+gem 'will_paginate-bootstrap4'
 gem 'sqlite3', '~> 1.3.6'
 
 
