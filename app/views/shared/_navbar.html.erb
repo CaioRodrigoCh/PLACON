@@ -22,7 +22,8 @@
         </li>
         <% if current_user.admin == true %>
         <li class="nav-item" >
-          <a class="fas fa-address-card fa-2x" href="admin/users_index" style="color: black;"></a>
+          <%# <a class="fas fa-address-card fa-2x" href="admin/users_index" style="color: black;"></a> %>
+          <%= link_to '', admin_users_index_path, class: 'fas fa-address-card fa-2x', style: 'color: black' %>
         </li>
         <% end %>
         <li class="nav-item">
